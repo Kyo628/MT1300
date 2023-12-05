@@ -12,9 +12,16 @@
 name: Build MT1300 from Lean
 
 on:
+  
+  # SSH
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH Connection to Actions'
+        required: false
+        default: 'false'
+
   repository_dispatch:
-  release:
-    types: published
 
   push:
     branches:
